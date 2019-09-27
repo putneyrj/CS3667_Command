@@ -7,11 +7,11 @@ public class Hottub {
     public final static int MIN_TEMPERATURE = 80;
 
 	public Hottub() {
-	}
+	    temperature = 105;
+    }
 
 	public void on() {
 		on = true;
-        temperature = 105;
 	}
 
 	public void off() {
@@ -42,14 +42,26 @@ public class Hottub {
 		}
 	}
 
-	public void setTemperature(int temperature) {
+	public boolean setTemperature(int temperature) {
 		if (on){
-            if(temperature > MAX_TEMPERATURE) temperature = MAX_TEMPERATURE;
-            if(temperature < MIN_TEMPERATURE) temperature = MIN_TEMPERATURE;
-
+            int prevTemp = temperature;
+            if(temperature < MIN_TEMPERATURE){
+                temperature = MIN_TEMPERATURE;
+                System.out.println("Hottub temperature cannot go any lower.");
+            }
+            if(temperature > MAX_TEMPERATURE){
+                temperature = MAX_TEMPERATURE;
+                System.out.println("Hottub temperature cannot go any higher.");
+            }
             this.temperature = temperature;
+            
+            if (prevTemp != temperature) return true;
+            else return false;
         }
 	}
+
+    public void changeTemperature(int temperature){
+
     
     public int getTemperature() {
 		return temperature;
