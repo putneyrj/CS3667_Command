@@ -10,6 +10,7 @@ public class RemoteControl {
 	Command[] onCommands;
 	Command[] offCommands;
 	List<Command> commandLog;
+    Command undo = new NoCommand();
  
 	public RemoteControl() {
 		onCommands = new Command[7];
@@ -30,14 +31,20 @@ public class RemoteControl {
  
 	public void onButtonWasPushed(int slot) {
 		onCommands[slot].execute();
+        undo = onCommands[slot];
 		commandLog.add(onCommands[slot]);
 	}
  
 	public void offButtonWasPushed(int slot) {
 		offCommands[slot].execute();
+        undo = offCommands[slot];
 		commandLog.add(offCommands[slot]);
 	}
-  
+    
+    public void undoButtonWasPushed(){
+        this.undo.undo();
+    }
+
 	public String toString() {
 		StringBuffer stringBuff = new StringBuffer();
 		stringBuff.append("\n------ Remote Control -------\n");

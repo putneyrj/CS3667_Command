@@ -61,17 +61,21 @@ public class RemoteLoader {
 		remoteControl.onButtonWasPushed(1);
 		remoteControl.offButtonWasPushed(1);
 		remoteControl.onButtonWasPushed(2);
-		remoteControl.offButtonWasPushed(2);
+		remoteControl.undoButtonWasPushed();
+        remoteControl.offButtonWasPushed(2);
 		remoteControl.onButtonWasPushed(3);
 		remoteControl.offButtonWasPushed(3);
         remoteControl.onButtonWasPushed(4);
         remoteControl.onButtonWasPushed(5);
+        remoteControl.onButtonWasPushed(5);
+        remoteControl.undoButtonWasPushed();
         remoteControl.onButtonWasPushed(5);
         remoteControl.onButtonWasPushed(5);
         remoteControl.onButtonWasPushed(5);
         remoteControl.onButtonWasPushed(5);
         remoteControl.onButtonWasPushed(5);
         remoteControl.offButtonWasPushed(5);
+        remoteControl.undoButtonWasPushed();
         remoteControl.offButtonWasPushed(4);
         remoteControl.offButtonWasPushed(6);
 	}

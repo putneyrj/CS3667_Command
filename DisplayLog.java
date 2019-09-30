@@ -7,8 +7,9 @@ public class DisplayLog implements Command {
 	@Override
 	public void execute() {
 		// TODO Auto-generated method stub
-		for (Command i : rem.commandLog) 
-            System.out.print(i.display()); 
+		System.out.println("\nRemote's Display Log:\n");
+        for (Command i : rem.commandLog) 
+            System.out.println(i.display()); 
 	}
 	@Override
 	public void undo() {
