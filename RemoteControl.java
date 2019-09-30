@@ -10,15 +10,16 @@ public class RemoteControl {
 	Command[] onCommands;
 	Command[] offCommands;
 	List<Command> commandLog;
-    Command undo = new NoCommand();
+    int undo = 0;
  
 	public RemoteControl() {
-		onCommands = new Command[7];
-		offCommands = new Command[7];
+		onCommands = new Command[8];
+		offCommands = new Command[8];
 		commandLog = new ArrayList<>();
- 
+
 		Command noCommand = new NoCommand();
-		for (int i = 0; i < 7; i++) {
+        commandLog.add(noCommand);
+		for (int i = 0; i < 8; i++) {
 			onCommands[i] = noCommand;
 			offCommands[i] = noCommand;
 		}
@@ -31,18 +32,19 @@ public class RemoteControl {
  
 	public void onButtonWasPushed(int slot) {
 		onCommands[slot].execute();
-        undo = onCommands[slot];
+        undo++;
 		commandLog.add(onCommands[slot]);
 	}
  
 	public void offButtonWasPushed(int slot) {
 		offCommands[slot].execute();
-        undo = offCommands[slot];
+        undo++;
 		commandLog.add(offCommands[slot]);
 	}
     
     public void undoButtonWasPushed(){
-        this.undo.undo();
+        commandLog.get(undo).undo();
+        commandLog.remove(undo);
     }
 
 	public String toString() {
