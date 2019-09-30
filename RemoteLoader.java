@@ -11,6 +11,8 @@ public class RemoteLoader {
 		GarageDoor garageDoor = new GarageDoor("");
 		Stereo stereo = new Stereo("Living Room");
         Hottub hottub = new Hottub();
+        DisplayLog dis = new DisplayLog(remoteControl);
+        NoCommand no = new NoCommand();
          
 		LightOnCommand livingRoomLightOn = 
 				new LightOnCommand(livingRoomLight);
@@ -50,6 +52,7 @@ public class RemoteLoader {
 		remoteControl.setCommand(3, stereoOnWithCD, stereoOff);
         remoteControl.setCommand(4, hottubOnCommand, hottubOffCommand);
         remoteControl.setCommand(5, IncrementHottubTemperatureCommand, DecrementHottubTemperatureCommand);
+        remoteControl.setCommand(6, no, dis);
 
 		System.out.println(remoteControl);
  
@@ -70,5 +73,6 @@ public class RemoteLoader {
         remoteControl.onButtonWasPushed(5);
         remoteControl.offButtonWasPushed(5);
         remoteControl.offButtonWasPushed(4);
+        remoteControl.offButtonWasPushed(6);
 	}
 }

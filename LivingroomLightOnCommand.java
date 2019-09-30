@@ -10,4 +10,9 @@ public class LivingroomLightOnCommand implements Command {
 	public void execute() {
 		light.on();
 	}
+	@Override
+	public String display() {
+		// TODO Auto-generated method stub
+		return this.getClass().getName();
+	}
 }

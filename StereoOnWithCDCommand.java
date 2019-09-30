@@ -12,4 +12,9 @@ public class StereoOnWithCDCommand implements Command {
 		stereo.setCD();
 		stereo.setVolume(11);
 	}
+	@Override
+	public String display() {
+		// TODO Auto-generated method stub
+		return this.getClass().getName();
+	}
 }

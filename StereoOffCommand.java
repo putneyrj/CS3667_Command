@@ -10,4 +10,9 @@ public class StereoOffCommand implements Command {
 	public void execute() {
 		stereo.off();
 	}
+	@Override
+	public String display() {
+		// TODO Auto-generated method stub
+		return this.getClass().getName();
+	}
 }

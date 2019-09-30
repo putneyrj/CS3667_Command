@@ -13,5 +13,10 @@ public class CeilingFanOnCommand implements Command {
     public void undo(){
         ceilingFan.prevState(); 
     }
+    @Override
+	public String display() {
+		// TODO Auto-generated method stub
+		return this.getClass().getName();
+	}
 
 }

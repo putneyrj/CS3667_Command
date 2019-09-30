@@ -12,4 +12,9 @@ public class HottubOnCommand implements Command {
 		hottub.heat();
 		hottub.bubblesOn();
 	}
+	@Override
+	public String display() {
+		// TODO Auto-generated method stub
+		return this.getClass().getName();
+	}
 }

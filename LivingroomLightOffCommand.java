@@ -10,4 +10,9 @@ public class LivingroomLightOffCommand implements Command {
 	public void execute() {
 		light.off();
 	}
+	@Override
+	public String display() {
+		// TODO Auto-generated method stub
+		return this.getClass().getName();
+	}
 }

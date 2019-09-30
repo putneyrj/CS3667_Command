@@ -14,4 +14,9 @@ public class GarageDoorUpCommand implements Command {
     public void undo(){
         garageDoor.down();
     }
+    @Override
+	public String display() {
+		// TODO Auto-generated method stub
+		return this.getClass().getName();
+	}
 }

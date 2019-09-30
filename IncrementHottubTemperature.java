@@ -13,4 +13,9 @@ public class IncrementHottubTemperature implements Command {
             System.out.println("Hottub temperature has been raised by one degree.");
 
 	}
+	@Override
+	public String display() {
+		// TODO Auto-generated method stub
+		return this.getClass().getName();
+	}
 }
