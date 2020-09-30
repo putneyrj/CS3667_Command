@@ -9,9 +9,9 @@ public class CeilingFanOffCommand implements Command {
 	public void execute() {
 		ceilingFan.off();
 	}
-    public void undo(){
+   	public void undo(){
         ceilingFan.prevState();
-    }
+   	}
 	@Override
 	public String display() {
 		// TODO Auto-generated method stub
